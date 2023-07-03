@@ -9,7 +9,7 @@ Additional driver for Odoo Iot Box to read weigths from KERN scales.
     connect to iotbox with ssh  and login with standard  username and password
     sudo mount -o rw,remount /
     sudo mount -o remount,rw /root_bypass_ramdisks
-    put the file in the drivers directory (the same directory where is located SerialScaleDriver.py  es.: /root_bypass_ramdisks/addons/hw_drivers/iot_handlers/drivers for iotbox from odoo 16.0 ) with an ftp over ssh client, or create a new blank file named SerialScaleDriverKernBase.py and paste contents of this file
+    put the file(s) in the drivers directory (the same directory where is located SerialScaleDriver.py  es.: /root_bypass_ramdisks/addons/hw_drivers/iot_handlers/drivers for iotbox from odoo 16.0 ) with an ftp over ssh client, or create a new blank file named SerialScaleDriverKernBase.py and paste contents of this file
     
 # Notes
 Scale must be powered on during the boot of Iot Box for the scale to be recognized
