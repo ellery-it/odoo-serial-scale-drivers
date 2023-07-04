@@ -33,6 +33,7 @@ ScaleProtocol = namedtuple('ScaleProtocol', SerialProtocol._fields + ('zeroComma
 
 # KERN DE
 #https://dok.kern-sohn.com/manuals/files/Italian/DE-BA-i-1758.pdf
+#https://www.kern-sohn.com/manuals/files/English/DE-BA-e-1356.pdf
 #M-       0.000 kg
 KernDEProtocol = ScaleProtocol(
     name='Kern DE 0.1',
@@ -40,7 +41,7 @@ KernDEProtocol = ScaleProtocol(
     bytesize=serial.EIGHTBITS,
     stopbits=serial.STOPBITS_ONE,
     parity=serial.PARITY_NONE,
-    timeout=1,
+    timeout=2,
     writeTimeout=1,
     measureRegexp=b"^[\sM][\s-]\s*([0-9.]+)kg[\r\n]",             
     statusRegexp=None,
@@ -82,16 +83,16 @@ class KernDEDriver(ScaleDriver):
 
         try:
             with serial_connection(device['identifier'], protocol, is_probing=True) as connection:
-                _logger.exception('Try... %s with protocol %s' % (device, protocol.name))
+                _logger.debug('Try... device %s with protocol %s' % (device, protocol.name))
                 connection.write(b'w' + protocol.commandTerminator)
                 time.sleep(protocol.commandDelay)
                 answer = connection.read(6)
-                _logger.exception('Answer: [%s]. %s with protocol %s' % (answer, device, protocol.name))
+                _logger.debug('Answer: [%s] from device %s with protocol %s' % (answer, device, protocol.name))
 #                if answer == b'\xffST,GS':
 #                if answer == b'ST,GS':
-                if answer.find(b'kg')!=-1:
+                if answer.find(b' kg')!=-1:
 #                    connection.write(b'F' + protocol.commandTerminator)  #end echo mode on MT 8217
-                    _logger.exception('OK %s with protocol %s' % (device, protocol.name))
+                    _logger.debug('OK %s with protocol %s' % (device, protocol.name))
                     return True
         except serial.serialutil.SerialTimeoutException:
             _logger.exception('Serial Timeout %s with protocol %s' % (device, protocol.name))
