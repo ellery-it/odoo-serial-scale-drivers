@@ -6,7 +6,7 @@ Additional driver for Odoo Iot Box to read weigths from KERN scales.
 
 
 # Install
-*connect to iotbox with ssh  and login with username and password (default: pi/raspberry)*
+*connect to iotbox (default hostname: `raspberrypi` ) with ssh (i.e. putty) and login with username and password (default: pi/raspberry)*
 
     git clone https://ellery-it@github.com/ellery-it/odoo-serial-scale-drivers.git
     
