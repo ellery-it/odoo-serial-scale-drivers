@@ -50,11 +50,17 @@ IotBox from Odoo 12.0 to 16.0
 
     cat /var/log/odoo/odoo-server.log | grep SSD
     
-## communicate with the scale via iotbox and test commands
-*assuming device name is /dev/serial/by-path/platform-fd500000.pcie-pci-0000:01:00.0-usb-0:1.2:1.0-port0 (check the correct device name in the logs or connecting to http://raspberrypi:8069)*
+## Communicate with the scale via iotbox and test commands
+*Assuming device name is /dev/serial/by-path/platform-fd500000.pcie-pci-0000:01:00.0-usb-0:1.2:1.0-port0 (check the correct device name in the logs or connecting to http://raspberrypi:8069)*
     
     sudo screen  /dev/serial/by-path/platform-fd500000.pcie-pci-0000:01:00.0-usb-0:1.2:1.0-port0 9600
     CTRL+a and then 'k' will kill a screen session (y to confirm)
+*Manually send commands to the scale to read, zero, or tare (measureCommand, zeroCommand, tareCommand)*
+
+# Disclaimer
+The contents of these scripts and files are created with utmost care. Nobody does warrant the accuracy, completeness or timeliness of the content. Use of the content of the contests is at your own risk.
+
+Although I make my best effort to maintain the contents up-to-date and accurate, I can not warrant to the adequacy, accuracy, completeness or correctness of such information.
 
 # Donations
 If you like this work and want to support, you can for example buy me a coffee [!["Buy Me A Coffee"](https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png)](https://www.buymeacoffee.com/elleryqueen)
