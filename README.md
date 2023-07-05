@@ -1,5 +1,5 @@
 # Description
-Additional driver for Odoo Iot Box to read weigths from KERN scales. 
+Additional drivers for Odoo IotBox to read weigths from some KERN scales. 
 # Supports
 - Kern EOC: just reads weigth in ASK mode with Remote control instructions. Accepts weigth without taking into account if scale is in stable or unstable state
 - Kern DE: Accepts weigth without taking into account if scale is in stable or unstable state. Need to set baud rate to 9600 and  weighing units to Kg on the scale.  (See kern manual https://www.kern-sohn.com/manuals/files/English/DE-BA-e-1356.pdf)
