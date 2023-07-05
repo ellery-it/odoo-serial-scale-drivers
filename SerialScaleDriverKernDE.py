@@ -32,16 +32,15 @@ ScaleProtocol = namedtuple('ScaleProtocol', SerialProtocol._fields + ('zeroComma
 
 
 # KERN DE
-#https://dok.kern-sohn.com/manuals/files/Italian/DE-BA-i-1758.pdf
 #https://www.kern-sohn.com/manuals/files/English/DE-BA-e-1356.pdf
 #M-       0.000 kg
 KernDEProtocol = ScaleProtocol(
-    name='Kern DE 0.1',
+    name='Kern DE (ver. 0.1)',
     baudrate=9600,
     bytesize=serial.EIGHTBITS,
     stopbits=serial.STOPBITS_ONE,
     parity=serial.PARITY_NONE,
-    timeout=2,
+    timeout=1,
     writeTimeout=1,
     measureRegexp=b"^[\sM][\s-]\s*([0-9.]+)\skg",             
     statusRegexp=None,
@@ -90,7 +89,7 @@ class KernDEDriver(ScaleDriver):
                 _logger.info('Answer: [%s] from device %s with protocol %s' % (answer, device, protocol.name))
 #                if answer == b'\xffST,GS':
 #                if answer == b'ST,GS':
-                if answer.find(b' kg')!=-1:
+                if answer.find(b' kg \r\n')!=-1:
 #                    connection.write(b'F' + protocol.commandTerminator)  #end echo mode on MT 8217
                     _logger.info('OK %s with protocol %s' % (device, protocol.name))
                     return True
