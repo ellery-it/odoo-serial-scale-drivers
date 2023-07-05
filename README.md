@@ -6,26 +6,29 @@ Additional driver for Odoo Iot Box to read weigths from KERN scales.
 
 
 # Install
-    *connect to iotbox with ssh  and login with username and password (default: pi/raspberry)*
+*connect to iotbox with ssh  and login with username and password (default: pi/raspberry)*
     sudo mount -o rw,remount /
     sudo mount -o remount,rw /root_bypass_ramdisks
-    *change to the directory where is located SerialScaleDriver.py, i.e. in v. 21.10:*
-    cd /root_bypass_ramdisks/home/pi/odoo/addons/hw_drivers/iot_handlers/drivers/ 
-    rm -rf odoo-scale-drivers
-    git clone https://ellery-it@github.com/ellery-it/odoo-scale-drivers.git
-    cp odoo-scale-drivers/*.py .
+    git clone https://ellery-it@github.com/ellery-it/odoo-serial-scale-drivers.git
+    
+*copy driver(s) to the directory where is located SerialScaleDriver.py, i.e. in v. 21.10:*
+    cp odoo-serial-scale-drivers/SSD*.py /root_bypass_ramdisks/home/pi/odoo/addons/hw_drivers/iot_handlers/drivers/ 
     sudo reboot
+    
+# Uninstall
+   rm -rf odoo-serial-scale-drivers
+   rm -rf /root_bypass_ramdisks/home/pi/odoo/addons/hw_drivers/iot_handlers/drivers/SSD*.py
     
 # Notes
 Scale must be powered on during the boot of IotBox for the scale to be recognized
     
 # Compatibility
-IotBox from odoo 8.0 to 16.0
+IotBox from odoo 12.0 to 16.0
 
 # Tested with
     IotBox v. 21.10
     Kern EOC 60K-2 
-    Kern DE
+    Kern DE 35K5DL
 
 # Troubleshooting tips
     sudo mount -o remount,rw /
