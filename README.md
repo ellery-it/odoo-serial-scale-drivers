@@ -38,7 +38,8 @@ IotBox from odoo 8.0 to 16.0
     cat /var/log/odoo/odoo-server.log | grep SerialScale
     
 ## to communicate with the scale and test commands
-*assuming device name is /dev/serial/by-path/platform-fd500000.pcie-pci-0000:01:00.0-usb-0:1.2:1.0-port0*
+*assuming device name is /dev/serial/by-path/platform-fd500000.pcie-pci-0000:01:00.0-usb-0:1.2:1.0-port0 (check the correct device name in the logs or connecting to https://<IOTBOX-IP-ADDRESS>:8069)*
+    
     sudo screen  /dev/serial/by-path/platform-fd500000.pcie-pci-0000:01:00.0-usb-0:1.2:1.0-port0 9600
     CTRL+a and then 'k' will kill a screen session (y to confirm)
 
