@@ -1,12 +1,14 @@
 # Description
-Additional drivers for Odoo IotBox to read weigths from some KERN scales. 
+Odoo IotBox allows to connect an external scale to Odoo. Unfortunately, altough infrastructure is coded to easily implement additional drivers, only drivers for two protocols are provided out-of-the-box ( Mettled Toledo 8217 and Adam AZExtra)
+That's why we started to write additional drivers for Odoo IotBox to read weigths from some other scales. 
+
 # Supports
 - Kern EOC: just reads weigth in ASK mode with Remote control instructions. Accepts weigth without taking into account if scale is in stable or unstable state
 - Kern DE: Accepts weigth without taking into account if scale is in stable or unstable state. Need to set baud rate to 9600 and  weighing units to Kg on the scale.  (See kern manual https://www.kern-sohn.com/manuals/files/English/DE-BA-e-1356.pdf)
 
 
 # Install
-*connect to iotbox (default hostname: `raspberrypi` ) with ssh (i.e. putty) and login with username and password (default: pi/raspberry)*
+*connect with ssh (i.e. putty) to iotbox (default hostname: `raspberrypi` ) from the same lan and login with username and password (default: pi/raspberry)*
 
     git clone https://ellery-it@github.com/ellery-it/odoo-serial-scale-drivers.git
     
@@ -18,7 +20,8 @@ Additional drivers for Odoo IotBox to read weigths from some KERN scales.
     sudo reboot
 
 # Test
-    connect to  http://<IOTBOX-IP-ADDRESS>:8069 and check under "scales" in the main window. If you have just one IoBox could work this: http://raspberrypi:8069
+connect to  http://IOTBOX-IP-ADDRESS:8069 from the same lan where the iotbox is connected and check under "scales" in the main window. 
+If you have just one IoBox could work this: [http://raspberrypi:8069](http://raspberrypi:8069)
     
 # Uninstall
     rm -rf odoo-serial-scale-drivers
@@ -48,7 +51,7 @@ IotBox from odoo 12.0 to 16.0
     cat /var/log/odoo/odoo-server.log | grep SSD
     
 ## to communicate with the scale and test commands
-*assuming device name is /dev/serial/by-path/platform-fd500000.pcie-pci-0000:01:00.0-usb-0:1.2:1.0-port0 (check the correct device name in the logs or connecting to http://<IOTBOX-IP-ADDRESS>:8069)*
+*assuming device name is /dev/serial/by-path/platform-fd500000.pcie-pci-0000:01:00.0-usb-0:1.2:1.0-port0 (check the correct device name in the logs or connecting to http://raspberrypi:8069)*
     
     sudo screen  /dev/serial/by-path/platform-fd500000.pcie-pci-0000:01:00.0-usb-0:1.2:1.0-port0 9600
     CTRL+a and then 'k' will kill a screen session (y to confirm)
