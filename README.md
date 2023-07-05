@@ -16,7 +16,8 @@ Additional driver for Odoo Iot Box to read weigths from KERN scales.
     sudo reboot
 
 # Test
-    connect to  http://<IOTBOX-IP-ADDRESS>:8069 and check under "scales" in the main window
+    connect to  http://<IOTBOX-IP-ADDRESS>:8069 and check under "scales" in the main window. If you have just one IoBox could work this: http://raspberrypi:8069
+    
 # Uninstall
     rm -rf odoo-serial-scale-drivers
     rm -rf /root_bypass_ramdisks/home/pi/odoo/addons/hw_drivers/iot_handlers/drivers/SSD*.py
