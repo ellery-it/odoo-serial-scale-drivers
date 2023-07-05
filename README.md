@@ -57,4 +57,4 @@ IotBox from Odoo 12.0 to 16.0
     CTRL+a and then 'k' will kill a screen session (y to confirm)
 
 # Donations
-If you like this work and want to support, you can for example buy me a coffee: [!["Buy Me A Coffee"](https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png)](https://www.buymeacoffee.com/elleryqueen)
+If you like this work and want to support, you can for example buy me a coffee [!["Buy Me A Coffee"](https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png)](https://www.buymeacoffee.com/elleryqueen)
