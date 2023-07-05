@@ -1,10 +1,12 @@
 # -*- coding: utf-8 -*-
 """
+Description: Serial Scale Driver for Odoo IotBox
+Scale: KERN EOC (ASK protocol)
 Author: Andrea Diaco
 Github: https://github.com/ellery-it
-Date: 2023-06-28
+Date: 2023-07-05
 Version: 0.1
-Filename: SerialScaleDriverKernEOC.py
+Filename: SSD-KernEOC.py
 License: GNU GENERAL PUBLIC LICENSE 3.0 
 
 """
@@ -35,7 +37,7 @@ ScaleProtocol = namedtuple('ScaleProtocol', SerialProtocol._fields + ('zeroComma
 #https://dok.kern-sohn.com/manuals/files/Italian/KIB-TM-ZB-i-1710.pdf
 #https://dok.kern-sohn.com/manuals/files/English/eoc-ba-e-1920.pdf
 KernEOCProtocol = ScaleProtocol(
-    name='Kern EOC 0.1',
+    name='Kern EOC (ver. 0.1)',
     baudrate=9600,
     bytesize=serial.EIGHTBITS,
     stopbits=serial.STOPBITS_ONE,
