@@ -82,16 +82,16 @@ class KernEOCDriver(ScaleDriver):
 
         try:
             with serial_connection(device['identifier'], protocol, is_probing=True) as connection:
-                _logger.debug('Try... %s with protocol %s' % (device, protocol.name))
+                _logger.info('Try... %s with protocol %s' % (device, protocol.name))
                 connection.write(b'S' + protocol.commandTerminator)
                 time.sleep(protocol.commandDelay)
                 answer = connection.read(6)
-                _logger.debug('Answer: [%s]. %s with protocol %s' % (answer, device, protocol.name))
+                _logger.info('Answer: [%s]. %s with protocol %s' % (answer, device, protocol.name))
 #                if answer == b'\xffST,GS':
 #                if answer == b'ST,GS':
                 if answer.find(b'ST,GS')!=-1:
 #                    connection.write(b'F' + protocol.commandTerminator)  #end echo mode on MT 8217
-                    _logger.debug('OK %s with protocol %s' % (device, protocol.name))
+                    _logger.info('OK %s with protocol %s' % (device, protocol.name))
                     return True
         except serial.serialutil.SerialTimeoutException:
             _logger.exception('Serial Timeout from device %s with protocol %s' % (device, protocol.name))

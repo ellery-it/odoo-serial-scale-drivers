@@ -43,7 +43,7 @@ KernDEProtocol = ScaleProtocol(
     parity=serial.PARITY_NONE,
     timeout=2,
     writeTimeout=1,
-    measureRegexp=b"^[\sM][\s-]\s*([0-9.]+)kg[\r\n]",             
+    measureRegexp=b"^[\sM][\s-]\s*([0-9.]+)\skg",             
     statusRegexp=None,
     commandDelay=0.2,
     measureDelay=0.5,
@@ -83,16 +83,16 @@ class KernDEDriver(ScaleDriver):
 
         try:
             with serial_connection(device['identifier'], protocol, is_probing=True) as connection:
-                _logger.debug('Try... device %s with protocol %s' % (device, protocol.name))
+                _logger.info('Try... device %s with protocol %s' % (device, protocol.name))
                 connection.write(b'w' + protocol.commandTerminator)
                 time.sleep(protocol.commandDelay)
-                answer = connection.read(6)
-                _logger.debug('Answer: [%s] from device %s with protocol %s' % (answer, device, protocol.name))
+                answer = connection.read(18)
+                _logger.info('Answer: [%s] from device %s with protocol %s' % (answer, device, protocol.name))
 #                if answer == b'\xffST,GS':
 #                if answer == b'ST,GS':
                 if answer.find(b' kg')!=-1:
 #                    connection.write(b'F' + protocol.commandTerminator)  #end echo mode on MT 8217
-                    _logger.debug('OK %s with protocol %s' % (device, protocol.name))
+                    _logger.info('OK %s with protocol %s' % (device, protocol.name))
                     return True
         except serial.serialutil.SerialTimeoutException:
             _logger.exception('Serial Timeout %s with protocol %s' % (device, protocol.name))
