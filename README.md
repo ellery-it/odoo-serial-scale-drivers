@@ -1,14 +1,14 @@
 # Description
-[Odoo IotBox](https://www.odoo.com/documentation/16.0/applications/productivity/iot.html) allows to connect an external scale to [Odoo](https://github.com/odoo/odoo). Unfortunately, altough infrastructure is coded to easily implement additional drivers, only drivers for two protocols are provided out-of-the-box ( Mettled Toledo 8217 and Adam AZExtra)
-That's why we started to write additional drivers for Odoo IotBox to read weigths from some other scales. 
+[Odoo Iot Box](https://www.odoo.com/documentation/16.0/applications/productivity/iot.html) allows to connect an external scale to [Odoo](https://github.com/odoo/odoo). Unfortunately, altough infrastructure is coded to easily implement additional drivers, only drivers for two protocols are provided out-of-the-box ( Mettled Toledo 8217 and Adam AZExtra)
+That's why we started to write additional drivers for Odoo Iot Box to read weigths from some other scales. 
 
 # Supports
-- Kern EOC: just reads weigth in ASK mode with Remote control instructions. Accepts weigth without taking into account if scale is in stable or unstable state
-- Kern DE: Accepts weigth without taking into account if scale is in stable or unstable state. Need to set baud rate to 9600 and  weighing units to Kg on the scale.  (See kern manual https://www.kern-sohn.com/manuals/files/English/DE-BA-e-1356.pdf)
+- Kern EOC: just reads weigth in ASK mode with Remote control instructions. Accepts weigth without taking into account if scale is in stable or unstable state (See [Kern EOC manual](https://dok.kern-sohn.com/manuals/files/English/eoc-ba-e-1920.pdf))
+- Kern DE: Accepts weigth without taking into account if scale is in stable or unstable state. Need to set baud rate to 9600 and  weighing units to Kg on the scale.  (See [Kern DE manual](https://www.kern-sohn.com/manuals/files/English/DE-BA-e-1356.pdf) )
 
 
 # Install
-*connect with ssh (i.e. putty) to iotbox (default hostname: `raspberrypi` ) from the same lan and login with username and password (default: pi/raspberry)*
+*connect with ssh (i.e. putty) to Iot Box (default hostname: `raspberrypi` ) from the same lan and login with username and password (default: pi/raspberry)*
 
     git clone https://github.com/ellery-it/odoo-serial-scale-drivers.git
     
@@ -20,21 +20,21 @@ That's why we started to write additional drivers for Odoo IotBox to read weigth
     sudo reboot
 
 # Test
-If you have just one IoBox connect to [http://raspberrypi:8069](http://raspberrypi:8069) from the same lan where the iotbox is connected to, and check under "scales" in the main window. 
-If it doesn't work you could need to identify the IP address of your IotBox and then connect to  `http://IOTBOX-IP-ADDRESS:8069` 
+If you have just one IoBox connect to [http://raspberrypi:8069](http://raspberrypi:8069) from the same lan where the Iot Box is connected to, and check under "scales" in the main window. 
+If it doesn't work you could need to identify the IP address of your Iot Box and then connect to  `http://IOTBOX-IP-ADDRESS:8069` 
     
 # Uninstall
     rm -rf odoo-serial-scale-drivers
-    rm -rf /root_bypass_ramdisks/home/pi/odoo/addons/hw_drivers/iot_handlers/drivers/SSD*.py
+    rm -rf /root_bypass_ramdisks/home/pi/odoo/addons/hw_drivers/_handlers/drivers/SSD*.py
     
 # Notes
-Scale must be powered on during the boot of IotBox (or at least when a `sudo service odoo restart` command is sent) for the scale to be recognized
+Scale must be powered on during the boot of Iot Box (or at least when a `sudo service odoo restart` command is sent) for the scale to be recognized
     
 # Compatibility
-IotBox from Odoo 12.0 to 16.0
+Iot Box from Odoo 12.0 to 16.0
 
 # Tested with
-    IotBox v. 21.10
+    Iot Box v. 21.10
     Kern EOC 60K-2 
     Kern DE 35K5DL
 
@@ -50,7 +50,7 @@ IotBox from Odoo 12.0 to 16.0
 
     cat /var/log/odoo/odoo-server.log | grep SSD
     
-## Communicate with the scale via iotbox and test commands
+## Communicate with the scale via Iot Box and test commands
 *Assuming device name is /dev/serial/by-path/platform-fd500000.pcie-pci-0000:01:00.0-usb-0:1.2:1.0-port0 (check the correct device name in the logs or connecting to http://raspberrypi:8069)*
     
     sudo screen  /dev/serial/by-path/platform-fd500000.pcie-pci-0000:01:00.0-usb-0:1.2:1.0-port0 9600
