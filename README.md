@@ -8,7 +8,7 @@ That's why we started to write additional drivers for Odoo IotBox to read weigth
 
 
 # Install
-*connect with ssh (i.e. putty) to iotbox (default hostname: `raspberrypi` ) from the same lan and login with username and password (default: pi/raspberry)*
+*connect with ssh (i.e. putty) to IotBox (default hostname: `raspberrypi` ) from the same LAN and login with username and password (default: pi/raspberry)*
 
     git clone https://github.com/ellery-it/odoo-serial-scale-drivers.git
     
