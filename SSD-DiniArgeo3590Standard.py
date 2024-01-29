@@ -89,10 +89,7 @@ class KernEOCDriver(ScaleDriver):
                 time.sleep(protocol.commandDelay)
                 answer = connection.read(6)
                 _logger.info('Answer: [%s]. %s with protocol %s' % (answer, device, protocol.name))
-#                if answer == b'\xffST,GS':
-#                if answer == b'ST,GS':
-                if answer.find(b'OK')!=-1:
-#                    connection.write(b'F' + protocol.commandTerminator)  #end echo mode on MT 8217
+                if answer.find(b'OK')!=-1 or answer.find(b'ERR04')!=-1 : 
                     _logger.info('OK %s with protocol %s' % (device, protocol.name))
                     return True
         except serial.serialutil.SerialTimeoutException:
