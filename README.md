@@ -1,5 +1,5 @@
 # Description
-[Odoo Iot Box](https://www.odoo.com/documentation/16.0/applications/productivity/iot.html) allows to connect an external scale to [Odoo](https://github.com/odoo/odoo). Unfortunately, altough infrastructure is coded to easily implement additional drivers, only drivers for protocols are provided out-of-the-box ( Mettled Toledo 8217 and Adam AZExtra)
+[Odoo Iot Box](https://www.odoo.com/documentation/16.0/applications/productivity/iot.html) allows to connect an external scale to [Odoo](https://github.com/odoo/odoo). Unfortunately, altough infrastructure is coded to easily implement additional drivers, only drivers for two protocols are provided out-of-the-box ( Mettled Toledo 8217, implemented in the Mettler Toledo Ariva S scale  and Adam AZExtra)
 That's why we started to write additional drivers for Odoo Iot Box to read weigths from some other scales. 
 
 # Supports
