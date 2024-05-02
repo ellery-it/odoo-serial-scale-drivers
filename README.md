@@ -44,7 +44,8 @@ Iot Box from Odoo 12.0 to 16.0
     sudo mount -o remount,rw /
     sudo mount -o remount,rw /root_bypass_ramdisks
     nano /root_bypass_ramdisks/home/pi/odoo/addons/point_of_sale/tools/posbox/configuration/odoo.conf 
-*change the log level in the Odoo configuration file to `log_level = debug` and save*
+*change the log level in the Odoo configuration file to `log_level = debug` (instead of `warn`) and save*
+
 
     sudo service odoo restart
     tail -f /var/log/odoo/odoo-server.log
@@ -54,7 +55,9 @@ Iot Box from Odoo 12.0 to 16.0
 
 *or use the route do download the log* 
     http://IOTBOX-IP-ADDRESS:8069/hw_drivers/download_logs
-    
+note: for the [iot windows](https://www.odoo.com/documentation/16.0/applications/general/iot/config/windows_iot.html)) version edit c:\odoo\server\odoo.conf and look at c:\odoo\server\odoo.log
+
+
 ## Communicate with the scale via Iot Box and test commands
 *Assuming device name is /dev/serial/by-path/platform-fd500000.pcie-pci-0000:01:00.0-usb-0:1.2:1.0-port0 (check the correct device name in the logs or connecting to http://raspberrypi:8069)*
     
