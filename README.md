@@ -55,7 +55,8 @@ Iot Box from Odoo 12.0 to 16.0
 
 *or use the route do download the log* 
     http://IOTBOX-IP-ADDRESS:8069/hw_drivers/download_logs
-note: for the [iot windows](https://www.odoo.com/documentation/16.0/applications/general/iot/config/windows_iot.html)) version edit c:\odoo\server\odoo.conf and look at c:\odoo\server\odoo.log
+    
+note: for the [iot windows](https://www.odoo.com/documentation/16.0/applications/general/iot/config/windows_iot.html) version edit c:\odoo\server\odoo.conf and look at c:\odoo\server\odoo.log
 
 
 ## Communicate with the scale via Iot Box and test commands
