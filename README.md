@@ -5,7 +5,7 @@ That's why we started to write additional drivers for Odoo Iot Box to read weigt
 # Supports
 - Kern EOC: just reads weigth in ASK mode with Remote control instructions. Accepts weigth without taking into account if scale is in stable or unstable state (See [Kern EOC manual](https://dok.kern-sohn.com/manuals/files/English/eoc-ba-e-1920.pdf))
 - Kern DE: Accepts weigth without taking into account if scale is in stable or unstable state. Need to set baud rate to 9600 and  weighing units to Kg on the scale.  (See [Kern DE manual](https://www.kern-sohn.com/manuals/files/English/DE-BA-e-1356.pdf) )
-- Dini Argeo 3590. Read Stable weigth. (See [Dini Argeo Manual](https://www.bilanceonline.it/allegati/MAN_DGT_T.pdf))
+- Dini Argeo 3590: read stable weigth. (See [Dini Argeo Manual](https://www.bilanceonline.it/allegati/MAN_DGT_T.pdf))
 - ADAM already supported, just extracted from SerialScaleDriver.py for test puropses. (See [Manual](https://www.adamequipment.com/media/docs/Print%20Publications/Manuals/PDF/AZEXTRA/AZEXTRA-UM.pdf))
 
 
