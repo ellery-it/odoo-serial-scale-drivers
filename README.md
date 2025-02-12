@@ -35,13 +35,12 @@ If it doesn't work you could need to identify the IP address of your Iot Box and
 # Notes
 Scale must be powered on during the boot of Iot Box (or at least when a `sudo service odoo restart` command is sent) for the scale to be recognized
     
-# Compatibility
-Iot Box from Odoo 12.0 to 16.0
-
 # Tested with
     Iot Box v. 21.10
     Kern EOC 60K-2 
     Kern DE 35K5DL
+    Dini Argeo 3590:
+  
 
 # Troubleshooting tips
     sudo mount -o remount,rw /
