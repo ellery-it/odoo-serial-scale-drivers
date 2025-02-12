@@ -9,7 +9,7 @@ That's why we started to write additional drivers for Odoo Iot Box to read weigt
 - ADAM already supported, just extracted from SerialScaleDriver.py for test puropses. (See [Manual](https://www.adamequipment.com/media/docs/Print%20Publications/Manuals/PDF/AZEXTRA/AZEXTRA-UM.pdf))
 
 
-# Install
+# Install (until IotBox v.21)
 *connect with ssh (i.e. putty) to Iot Box (default hostname: `raspberrypi` ) from the same LAN and login with username and password (default: pi/raspberry)*
 
     git clone https://github.com/ellery-it/odoo-serial-scale-drivers.git
@@ -20,6 +20,9 @@ That's why we started to write additional drivers for Odoo Iot Box to read weigt
     sudo mount -o remount,rw /root_bypass_ramdisks
     cp odoo-serial-scale-drivers/SSD*.py /root_bypass_ramdisks/home/pi/odoo/addons/hw_drivers/iot_handlers/drivers/ 
     sudo reboot
+# Install on newer IotBox (i.e. v. 24)
+New Iotboxes search drivers from the server installation where the iotbox is paired with, and download the drivers (with method helpers.download_iot_handlers() ) from addons/hw_drivers/iot_handlers/drivers/ to local drivers path ( i.e. /home/pi/odoo/addons/hw_drivers/ ).
+Put the new drivers on the server side (addons/hw_drivers/iot_handlers/drivers/) and verify that they are dowloaded to the IotBox after a restart.
 
 # Test
 If you have just one IoBox connect to [http://raspberrypi:8069](http://raspberrypi:8069) from the same lan where the Iot Box is connected to, and check under "scales" in the main window. 
