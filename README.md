@@ -18,7 +18,7 @@ That's why we started to write additional drivers for Odoo Iot Box to read weigt
 
     sudo mount -o rw,remount /
     sudo mount -o remount,rw /root_bypass_ramdisks
-    cp odoo-serial-scale-drivers/SSD*.py /root_bypass_ramdisks/home/pi/odoo/addons/hw_drivers/iot_handlers/drivers/ 
+    cp odoo-serial-scale-drivers/21.10/SSD*.py /root_bypass_ramdisks/home/pi/odoo/addons/hw_drivers/iot_handlers/drivers/ 
     sudo reboot
 # Install on newer IotBox (i.e. v. 24)
 New Iotboxes search drivers from the server installation where the iotbox is paired with, and download the drivers (with method helpers.download_iot_handlers() ) from addons/hw_drivers/iot_handlers/drivers/ to local drivers path ( i.e. /home/pi/odoo/addons/hw_drivers/ ).
