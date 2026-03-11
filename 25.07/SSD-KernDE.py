@@ -4,7 +4,7 @@ Description: Serial Scale Driver for Odoo IotBox
 Scale: KERN DE (Data transfer mode: Data output via remote control commands)
 Author: Andrea Diaco
 Github: https://github.com/ellery-it
-Date: 2025-12-01
+Date: 2026-03-11
 Version: 0.3
 Filename: SSD-KernDE.py
 License: GNU GENERAL PUBLIC LICENSE 3.0 
